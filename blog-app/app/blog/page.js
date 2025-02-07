@@ -1,11 +1,11 @@
-import React from 'react'
+import Blog from '@/components/Blog'
 
-const Blog = () => {
-  return (
-    <div>
-      my blog
-    </div>
-  )
+export const metadata = {
+    title: "Blogs"
 }
 
-export default Blog
+const BlogRoute = () => {
+  return <Blog />
+}
+
+export default BlogRoute

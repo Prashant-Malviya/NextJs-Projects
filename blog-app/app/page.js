@@ -1,4 +1,4 @@
-import React from "react";
+import Home from '@/components/Home'
 
 export const metadata = {
   title: "Homepage",
@@ -7,7 +7,7 @@ export const metadata = {
 const Homepage = () => {
   return (
     <div>
-      <h1>Welcome to Prashant Blogs</h1>
+      <Home />
     </div>
   );
 };

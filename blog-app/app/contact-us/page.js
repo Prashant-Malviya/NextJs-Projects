@@ -1,16 +1,11 @@
-import React from 'react'
-
+import ContactUs from "@/components/ContactUs"
 
 export const metadata = {
     title : "ContactUs"
 }
 
-const ContactUs = () => {
-  return (
-    <div>
-      welcome to contact us
-    </div>
-  )
+const ContactUsRoute = () => {
+  return <ContactUs />
 }
 
-export default ContactUs
+export default ContactUsRoute

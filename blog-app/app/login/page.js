@@ -1,11 +1,11 @@
-import React from 'react'
+import Login from '@/components/Login'
 
-const Login = () => {
-  return (
-    <div>
-      <h1>Welcome to login page</h1>
-    </div>
-  )
+export const metadata = {
+    title: "Login"
 }
 
-export default Login
+const LoginRoute = () => {
+  return <Login />
+}
+
+export default LoginRoute

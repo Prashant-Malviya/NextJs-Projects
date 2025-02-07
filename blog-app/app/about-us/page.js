@@ -1,11 +1,13 @@
-import React from 'react'
+import AboutUs from '@/components/AboutUs'
 
-const AboutUs = () => {
+export const metadata = {
+    title: "About Us"
+}
+
+const AboutUsRoute = () => {
   return (
-    <div>
-      about us
-    </div>
+    <AboutUs />
   )
 }
 
-export default AboutUs
+export default AboutUsRoute
