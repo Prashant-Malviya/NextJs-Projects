@@ -21,3 +21,6 @@ note:- react,angular and vue by default they are on csr when using whith framerw
 
 
 - we always have to use (use client directives or 'use client')  in componets not in app folder there only the ssr thing will remain
+
+
+/api/signup <- alike style compnent in which we make file in the name of page.jsx , here in api we make the file with name of routes.js
