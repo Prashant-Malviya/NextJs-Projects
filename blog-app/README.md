@@ -37,3 +37,16 @@ Type ".help" for more information.
 - whatever we write in .env treated as string
 
 - when we are in app/page then we will import useRouter from {'next/router'} and if we are in component where we have written 'use client' then there we will import from {'next/navigation'}
+
+- middleware code is always run on server
+- since authenticity always check on server , so middleware gives us advantage on that part.
+- react code is always run on browser , and on browser our code is not secure
+
+- if we are protecting any of the route then it would be validated from server
+
+-- in middleware we cannot use axios we have to use fetch method instead
+
+
+
+
+
