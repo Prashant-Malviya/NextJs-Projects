@@ -1,10 +1,8 @@
-import React from 'react'
+import Admin from "@/components/Admin"
 
 const AdminRoute = () => {
   return (
-    <div>
-      <h1>welcome to admin dashboard</h1>
-    </div>
+    <Admin />
   )
 }
 

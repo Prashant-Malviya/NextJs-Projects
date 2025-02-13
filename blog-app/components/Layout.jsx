@@ -34,7 +34,11 @@ const Layout = ({ children }) => {
 
   console.log("pathname", pathname);
 
-  const blacklists = ["/login", "/signup"];
+  const blacklists = [
+    "/login", 
+    "/signup",
+    "/admin"
+  ];
 
   const isBlackList = blacklists.includes(pathname);
 

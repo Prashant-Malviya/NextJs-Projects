@@ -47,6 +47,9 @@ Type ".help" for more information.
 -- in middleware we cannot use axios we have to use fetch method instead
 
 
+- {'Content-Type': 'application/json'} <----- it is important to give if you are using nextjs, only then you are able to read data from the api
 
 
+- basically we use axios for data fetching but we can also use "swr" but it can only be used in private routes or where seo is not necessary while axios can be used in public routes where seo is needed
 
+-- import useSWR from "swr";
