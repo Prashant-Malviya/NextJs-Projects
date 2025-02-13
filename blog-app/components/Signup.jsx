@@ -1,14 +1,22 @@
 'use client'
 
 import React from 'react'
-import {Card,Button,Form, Input} from 'antd'
+import {Card,Button,Form, Input, message} from 'antd'
 import Link from 'next/link'
+import axios from 'axios'
+import {useRouter} from 'next/navigation'
 
 const Signup = () => {
 
-  const signup = (values)=>{
-    console.log(values);
-    
+  const router = useRouter();
+
+  const signup = async (values)=>{
+    try {
+      await axios.post('/api/signup',values, {'Content-Type': 'application/json'})
+      router.push('/login')
+    } catch (error) {
+      message.error(error.response.data.message || error.message)
+    }
   }
 
   return (

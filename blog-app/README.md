@@ -24,3 +24,16 @@ note:- react,angular and vue by default they are on csr when using whith framerw
 
 
 /api/signup <- alike style compnent in which we make file in the name of page.jsx , here in api we make the file with name of routes.js
+
+
+- To generate random token or secret token we usually do following
+
+prashant-malviya\Nextjs\blog-app> node
+Welcome to Node.js v22.13.1.
+Type ".help" for more information.
+> require("crypto").randomBytes(32).toString('hex')
+'generated token'
+
+- whatever we write in .env treated as string
+
+- when we are in app/page then we will import useRouter from {'next/router'} and if we are in component where we have written 'use client' then there we will import from {'next/navigation'}

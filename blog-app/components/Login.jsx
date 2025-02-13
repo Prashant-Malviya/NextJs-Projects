@@ -1,12 +1,22 @@
 "use client";
 
 import React from "react";
-import { Card, Button, Form, Input } from "antd";
+import { Card, Button, Form, Input, message } from "antd";
 import Link from "next/link";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
-  const login = (values) => {
-    console.log("values",values);
+
+  const router = useRouter();
+
+  const login = async(values) => {
+    try {
+      await axios.post('/api/login',values, {'Content-Type': 'application/json'})
+      router.push('/admin')
+    } catch (error) {
+      message.error(error.response.data.message || error.message)
+    }
   };
 
   return (
