@@ -1,10 +1,12 @@
-import "@/utils/db";
+import connectDB from "@/utils/db";
 import UserSchema from "@/schema/user.schema";
 import { NextResponse as res } from "next/server";
 
 export const POST = async (request) => {
   try {
     
+    await connectDB()
+
     const body = await request.json();
 
     const user = new UserSchema(body);

@@ -1,23 +1,12 @@
-import mongoose, {Schema} from "mongoose";
-const blogSchema = new Schema({
+import mongoose, { Schema } from "mongoose";
 
-    title: {
-        type: String,
-        required: true,
-        trim: true,
-        unique: true,
-        index: true, // means it will cache from server and give the fast response
+const blogSchema = new Schema(
+    {
+        title: { type: String, required: true, trim: true, unique: true, index: true },
+        description: { type: String, required: true, trim: true },
     },
-    description: {
-        type: String,
-        required: true,
-        trim: true,
-    }
+    { timestamps: true } // ✅ Automatically adds `createdAt` and `updatedAt`
+);
 
-})
-
-mongoose.models = {}
-
-const BlogSchema = mongoose.model("Blog",blogSchema)
-
-export default BlogSchema;
+const BlogShema = mongoose.models.Blog || mongoose.model("Blog", blogSchema);
+export default BlogShema;

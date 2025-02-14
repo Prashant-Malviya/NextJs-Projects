@@ -53,3 +53,8 @@ Type ".help" for more information.
 - basically we use axios for data fetching but we can also use "swr" but it can only be used in private routes or where seo is not necessary while axios can be used in public routes where seo is needed
 
 -- import useSWR from "swr";
+
+in useSWR() to live update we use mutate method
+
+- whatever define in swr we pass that in mutate method
+
