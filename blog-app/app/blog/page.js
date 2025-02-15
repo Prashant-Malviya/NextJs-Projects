@@ -4,8 +4,10 @@ export const metadata = {
   title: "Blogs",
 };
 
+export const revalidate = 86400; // through this we set the time for isr process
+
 const BlogRoute = async () => {
-  const blogs = await fetch("http://localhost:3000/api/blog");
+  const blogs = await fetch(`${process.env.SERVER}/api/blog`);
 
   const data = await blogs.json();
 

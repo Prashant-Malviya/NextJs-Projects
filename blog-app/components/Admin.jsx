@@ -42,6 +42,10 @@ const Admin = () => {
       await axios.post("/api/blog", values, {
         headers: { "Content-Type": "application/json" },
       });
+
+      //on demand revalidation
+      // await axios.post('/api/cache/clear',{paths:["/blog"]})
+
       message.success("Blog created successfully!");
       mutate('/api/blog'); // Refresh the blog list
       form.resetFields();

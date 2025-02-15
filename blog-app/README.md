@@ -74,3 +74,42 @@ in useSWR() to live update we use mutate method
 - always write code in route or in server side compnent of which you want seo
 
 - in nextjs in server axios won't support but in node it supports
+
+- when we fetch data through fetch method ie. fetch() then from server we get server instance , and when we call .json method with the data then we'll get data in json formate.
+
+- whenever we use fetch method on server then we need specify the domain also along with api route ie
+http://localhost:3000/api/blog
+
+- in nextjs in every api we need to establish connection with database , if we have stablished the connection in one of the route and if we are working in on another route where database connection not established then also we are able to work with database , because of session storage, but sometime we will get the data on other time we may not , 
+- so in summary you need to establish connection on every api route since nextjs treats every api seperate
+
+- caching means once we fetched data from server than we are able to use that data until we don't want to take new data from server, we can so the cached data till that time.
+
+- to forfully remove the cache we can use the following command 
+rm -rf .next
+
+- cache deletion know as cache revalidation
+
+
+- To remove caching we have two ways to do that in nextjs
+1- custome revalidation(on demand) - which means when needed than only cache will be deleted.
+2- isr -> increamental static regeneration - which means we will save a time on server and after that time data will be again fetched from the server , in simple terms fetch method will again called to fetche the data.
+
+
+export const revalidate = 86400;  through this we set the time for isr process in nextjs, this 86400 is basically seconds which means a 1 day.
+
+- in big websites like amazon , these website make changes 2-3 days before so that seo become stronger for the content, as long the time is , then it is good for seo.
+- realtime changes or very frequent changes in content makes seo slower for web apps
+
+- as long the cache is that strong the seo for websites
+
+import { NextResponse as res } from "next/server"
+import { revalidatePath } from "next/cache"
+
+- below code is known as on demand revalidation
+
+export const POST = (request)=> {
+    revalidatePath('/blog')
+    return res.json({success: true})
+}
+
