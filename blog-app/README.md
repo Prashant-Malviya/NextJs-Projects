@@ -58,3 +58,19 @@ in useSWR() to live update we use mutate method
 
 - whatever define in swr we pass that in mutate method
 
+- for caching in nextjs we have inbuilt method available ie. fetch()
+
+//seo must know things:- 
+
+- the page of which we want seo then we should write its code on route or page in app directory, since for seo server side rendering is important
+
+- if code runs on browser side then seo is not as good or may not fully seo friendly.
+
+- if you fetch data on server then only the data will be cached on server 
+
+- and if you use useSWR and useEffect then the data won't be cached on server , both the methods work on browser means on client side not in server side.
+
+- simple thing is the page of which u want seo, the logic for that page should not be in component or client side component.
+- always write code in route or in server side compnent of which you want seo
+
+- in nextjs in server axios won't support but in node it supports

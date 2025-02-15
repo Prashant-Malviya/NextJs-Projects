@@ -4,15 +4,16 @@ export const metadata = {
   title: "Homepage",
 };
 
-const Homepage = async() => {
-
-
+const Homepage = async() => { //this page is on server
+  
 
   return (
     <div>
-      <Home />
+      <Home/>
     </div>
   );
 };
+
+
 
 export default Homepage;

@@ -50,7 +50,7 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      <nav className="px-4 bg-white shadow-lg sticky top-0 left-0 w-full py-6 flex justify-between items-center">
+      <nav className="z-[50] px-4 bg-white shadow-lg sticky top-0 left-0 w-full py-6 flex justify-between items-center">
         <Link href={"/"} className="text-2xl font-bold">
           PrashantBlogs
         </Link>

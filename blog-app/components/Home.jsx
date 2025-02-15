@@ -1,11 +1,9 @@
-'use client'
-
-import React, {useState} from 'react'
+import React from 'react'
 
 const Home = () => {
   return (
     <div>
-      <h2>Hi from home</h2>
+      <h1>hi from home</h1>
     </div>
   )
 }
