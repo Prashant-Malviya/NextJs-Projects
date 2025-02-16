@@ -1,5 +1,10 @@
 import { NextResponse as res } from "next/server";
 import BlogSchema from "@/schema/blog.schema";
+import mongoose from "mongoose";
+
+const isId = (id) => {
+  return mongoose.Types.ObjectId.isValid(id);
+}
 
 export const PUT = async (request, { params }) => {
   try {
@@ -50,7 +55,15 @@ export const DELETE = async (request, { params }) => {
 
 export const GET = async (request, { params }) => {
   try {
-    const blog = await BlogSchema.findById(params.id);
+    // console.log("params id__->",params.id);
+    
+    const isMongoId = isId(params.id);
+
+    // console.log("id",id);
+    
+    const query = (isMongoId ? {_id: params.id} : {title: params.id.split("-").join(" ")})
+
+    const blog = await BlogSchema.findOne(query);
 
     if (!blog) {
       return res.json(
@@ -67,3 +80,6 @@ export const GET = async (request, { params }) => {
     );
   }
 };
+
+
+

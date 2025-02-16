@@ -113,3 +113,40 @@ export const POST = (request)=> {
     return res.json({success: true})
 }
 
+
+- slug:- is basically the content after the url, below is known as slug "MERN-Stack-Authentication"
+http://localhost:3000/blog/MERN-Stack-Authentication
+
+- we create the slug or the dynamic url using following code snippet
+```bash
+
+      <div className="w-8/12 mx-auto space-y-8">
+        {data?.map((item, index) => (
+          <Link key={index} href={`/blog/${item.title.split(" ").join("-")}`}>
+            <Card hoverable>
+              <h1 className="capitalize text-2xl font-semibold">
+                {item.title}{" "}
+              </h1>
+            </Card>
+          </Link>
+        ))}
+      </div>
+
+```
+
+- must know rules for slug for seo purpose
+
+1. slug for content
+
+2. show slug as heading tag on webpage
+
+3. show that content as webpage title
+
+4. website trafic is also most factor due to which our website won't rank on google, since other websites have good trafic thats by they rank top of all other websites.Even your website has all good points in terms of seo but due to low trafic google won't suggest your website on top.
+
+5. Even on your website there is high trafic but if content is not sufficient then also your website won't be come in search results.
+
+6. Google hates duplicate routes links
+
+7. create seperate page for specific slug
+
