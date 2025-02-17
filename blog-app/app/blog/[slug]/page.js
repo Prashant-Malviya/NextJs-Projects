@@ -7,14 +7,14 @@ import React from 'react'
 
 export const generateMetadata = ({params})=> {
   return {
-    title: `PrashantBlogs - ${params.slug}`
+    title: `PrashantBlogs - ` + params.slug
   }
 }
 
 const SlugRoute = async({params}) => {
 
-    // console.log("params",params)
-    // console.log("slugs from params",params.slug);
+    console.log("params",params)
+    console.log("slugs from params",params.slug);
 
     const res = await fetch(`${process.env.SERVER}/api/blog/${params.slug}`)
 
@@ -23,7 +23,7 @@ const SlugRoute = async({params}) => {
     console.log("slug data - > ",data);
     
     
-    return <Slug title={params.id} data = {data} />
+    return <Slug title={params.slug} data = {data} />
 
   // return (
   //   <div>

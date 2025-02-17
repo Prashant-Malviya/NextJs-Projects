@@ -1,9 +1,7 @@
 import { Card } from 'antd';
 import React from 'react'
 
-const Slug = ({title,data}) => {
-
-    console.log(title);
+const Slug = async({title,data}) => {
     
 
   return (
